@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="Css/Main.css">
+    <title>Header Ejemplo</title>
+</head>
+
+<body>
+    <header>
+        <div class="left-section">
+            <span class="logo"><img src="Fotos/logo.png"></span>
+            <div class="bars__menu">
+                <span class="line1__bars-menu"></span>
+                <span class="line2__bars-menu"></span>
+                <span class="line3__bars-menu"></span>
+            </div>
+        </div>
+        <div class="center-section">
+            <span>INICIO</span>
+        </div>
+        <div class="right-section">
+            <span class="shopping-cart">🛒</span>
+            <span class="user-icon">👤</span>
+        </div>
+    </header>
+    <div class="nav__links">
+        <ul>
+            <a href="#">
+                <li>Inicio</li>
+            </a>
+            <a href="#">
+                <li>Catalogo</li>
+            </a>
+            <a href="#">
+                <li>Nosotros</li>
+            </a>
+            <a href="#">
+                <li>Contáctanos</li>
+            </a>
+        </ul>
+    </div>
+    <script>
+        
+        // Agregar estilos usando JavaScript
+        const styleSheet = document.createElement("style");
+        document.head.appendChild(styleSheet);
+        styleSheet.type = "text/css";
+        styleSheet.innerText = `
+            .nav__links ul {
+                list-style-type: none;
+                padding: 0;
+                margin-top:0;
+                margin-left: 0px;
+                width: 350px;
+                height: 640px;
+                background-color: rgba(0, 0, 0, 0.8);
+                border-radius: 8px;
+                box-shadow: 0px 0px 15px rgba(0, 0, 0, 0.2);
+                font-size: 50px;
+                text-align: center;
+            }
+
+
+            .nav__links ul li {
+                padding: 50px 20px;
+                border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+            }
+
+            .nav__links ul li:last-child {
+                border-bottom: none;
+                color: white;
+            }
+
+            .nav__links ul li:hover {
+                background-color: rgba(255, 255, 255, 0.1);
+                cursor: pointer;
+                text-decoration: none;
+            }
+
+
+            .nav__links ul li i {
+                margin-right: 10px;
+            }
+
+            .nav__links ul {
+                display: none;
+            }
+        `;
+
+        const barsMenu = document.querySelector(".bars__menu");
+        const navList = document.querySelector(".nav__links ul"); // Seleccionar directamente el ul
+
+
+        var line1_bars = document.querySelector(".line1_bars-menu");
+        var line2_bars = document.querySelector(".line2_bars-menu");
+        var line3_bars = document.querySelector(".line3_bars-menu");
+
+        barsMenu.addEventListener("click", () => {
+            // Alternar visibilidad del menú
+            if (navList.style.display === "none" || navList.style.display === "") {
+                navList.style.display = "block";
+            } else {
+                navList.style.display = "none";
+            }
+
+            // Animar las barras del menú
+            animateBars();
+        });
+
+        function animateBars() {
+            line1_bars.classList.toggle("activeline1_bars-menu");
+            line2_bars.classList.toggle("activeline2_bars-menu");
+            line3_bars.classList.toggle("activeline3_bars-menu");
+        }
+
+    </script>
+</body>
+
+</html>

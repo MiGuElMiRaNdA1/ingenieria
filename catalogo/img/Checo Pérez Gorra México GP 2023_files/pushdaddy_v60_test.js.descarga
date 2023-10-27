@@ -1,0 +1,1 @@
+function dynamicallyLoadScript(e){var t=document.createElement("script");t.src=e,document.head.appendChild(t)}setTimeout(function(){dynamicallyLoadScript("https://cdn.shopify.com/s/files/1/0033/3538/9233/files/pushdaddy_v60_test.js")},200);

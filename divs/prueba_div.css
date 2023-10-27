@@ -1,0 +1,20 @@
+ /* Estilos para el primer div */
+ #div1 {
+    background-color: #FF5733;
+    color: white;
+    padding: 20px;
+}
+
+/* Estilos para el segundo div */
+#div2 {
+    background-color: #3498db;
+    color: white;
+    padding: 60px;
+}
+
+/* Estilos para el tercer div */
+#div3 {
+    background-color: #47C678;
+    color: white;
+    padding: 20px;
+}

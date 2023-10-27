@@ -1,0 +1,139 @@
+<!-- <?php
+    include "../conexion.php";
+?> -->
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="login.css">
+    <title>Document</title>
+</head>
+
+<body>
+    <div class="cotn_principal">
+        <div class="cont_centrar">
+
+            <div class="cont_login">
+                <div class="cont_info_log_sign_up">
+                    <div class="col_md_login">
+                        <div class="cont_ba_opcitiy">
+
+                            <h2>Inicio Sesión</h2>
+                            <p>¡Estamos encantados de verte de nuevo! Ingresa tus datos para comenzar la carrera.</p>
+                            <button class="btn_login" onclick="change_to_login()">Inicio Sesión</button>
+                        </div>
+                    </div>
+                    <div class="col_md_sign_up">
+                        <div class="cont_ba_opcitiy">
+                            <h2>Registrarse</h2>
+
+                            <p>Estamos encantados de que estés considerando unirte a nuestra plataforma</p>
+
+                            <button class="btn_sign_up" onclick="change_to_sign_up()">Registrarse</button>
+                        </div>
+                    </div>
+                </div>
+
+
+                <div class="cont_back_info">
+                    <div class="cont_img_back_grey">
+                        <!-- <img src="https://images.unsplash.com/42/U7Fc1sy5SCUDIu4tlJY3_NY_by_PhilippHenzler_philmotion.de.jpg?ixlib=rb-0.3.5&q=50&fm=jpg&crop=entropy&s=7686972873678f32efaf2cd79671673d"
+                            alt="" /> -->
+                        <img src="login_2.jpg" alt="" />
+                    </div>
+
+                </div>
+                <div class="cont_forms">
+                    <div class="cont_img_back_">
+                        <img src="login_2.jpg" alt="" />
+                    </div>
+                    <form action="login.php" method="POST">
+                        <div class="cont_form_login">
+                            <a href="#" onclick="hidden_login_and_sign_up()"><i class="material-icons">&#xE5C4;</i></a>
+                            <h2>Inicio Sesión</h2>
+                            <input type="text" placeholder="Email" name="email"/>
+                            <input type="password" placeholder="Password" name="pass"/>
+                            <button class="btn_login" onclick="change_to_login()">Inicio Sesión</button>
+                            <!-- <input class="btn_login" onclick="change_to_login()">Inicio Sesión> -->
+                        </div>
+                    </form>
+
+                    <div class="cont_form_sign_up">
+                        <a href="#" onclick="hidden_login_and_sign_up()"><i class="material-icons">&#xE5C4;</i></a>
+                        <h2>Registrarse</h2>
+                        <form action="singup.php" method="POST">
+                            <input type="email" placeholder="Email" name="email" />
+                            <input type="text" placeholder="Nombre" name="nombre"/>
+                            <input type="text" placeholder="Apellidos" name="apellidos"/>
+                            <input type="password" placeholder="Password" name="pass"/>
+                            <input type="password" placeholder="Confirm Password" name="conPass"/>
+                            <button class="btn_sign_up" onclick="change_to_sign_up()">Registrarse</button>
+                            <!-- <input type="submit" class="btn_sign_up" onclick="change_to_sign_up()">Registrarse> -->
+                        </form>
+                    </div>
+
+                </div>
+
+            </div>
+        </div>
+    </div>
+
+    <script>
+        /* ------------------------------------ Click on login and Sign Up to  changue and view the effect---------------------------------------*/
+        const time_to_show_login = 400;
+        const time_to_hidden_login = 200;
+
+        function change_to_login() {
+            document.querySelector('.cont_forms').className = "cont_forms cont_forms_active_login";
+            document.querySelector('.cont_form_login').style.display = "block";
+            document.querySelector('.cont_form_sign_up').style.opacity = "0";
+
+            setTimeout(function () {
+                document.querySelector('.cont_form_login').style.opacity = "1";
+            }, time_to_show_login);
+
+            setTimeout(function () {
+                document.querySelector('.cont_form_sign_up').style.display = "none";
+            }, time_to_hidden_login);
+        }
+
+        const time_to_show_sign_up = 100;
+        const time_to_hidden_sign_up = 400;
+
+        function change_to_sign_up(at) {
+            document.querySelector('.cont_forms').className = "cont_forms cont_forms_active_sign_up";
+            document.querySelector('.cont_form_sign_up').style.display = "block";
+            document.querySelector('.cont_form_login').style.opacity = "0";
+
+            setTimeout(function () {
+                document.querySelector('.cont_form_sign_up').style.opacity = "1";
+            }, time_to_show_sign_up);
+
+            setTimeout(function () {
+                document.querySelector('.cont_form_login').style.display = "none";
+            }, time_to_hidden_sign_up);
+
+
+        }
+
+        const time_to_hidden_all = 500;
+
+        function hidden_login_and_sign_up() {
+
+            document.querySelector('.cont_forms').className = "cont_forms";
+            document.querySelector('.cont_form_sign_up').style.opacity = "0";
+            document.querySelector('.cont_form_login').style.opacity = "0";
+
+            setTimeout(function () {
+                document.querySelector('.cont_form_sign_up').style.display = "none";
+                document.querySelector('.cont_form_login').style.display = "none";
+            }, time_to_hidden_all);
+
+        }
+    </script>
+</body>
+
+</html>

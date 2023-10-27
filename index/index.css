@@ -1,0 +1,44 @@
+/* Estilos para el carrusel de imagenes de equipos f1 */
+.carrusel {
+    display: flex;
+    justify-content: center; /* Centra horizontalmente */
+    align-items: center; /* Centra verticalmente */
+    width: 1000; /* Ancho del div */
+    height: 800; /* Alto del div */
+    max-width: 1200px; /* Establece un ancho máximo de 400px */
+    max-height: 1000px; /* Establece una altura máxima de 300px */
+    margin: 10px; /* Margen de 10px alrededor del div */
+    padding: 10px; /* Relleno de 20px dentro del div */
+    position: relative; /* Posición relativa */
+    /* top: 20px; //Desplazamiento 20px hacia abajo */
+    /* left: 50px; //Desplazamiento 50px hacia la derecha */
+}
+
+
+
+/* Estilos generales del pie de página */
+footer {
+    background-color: black;
+    color: #fff;
+    padding: 1em 0;
+    text-align: center;
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+}
+
+/* Estilos de los enlaces del pie de página */
+.footer-links {
+    text-align: center;
+}
+
+.footer-links a {
+    color: #fff;
+    text-decoration: none;
+    margin: 10px;
+}
+
+/* Estilos del texto de derechos de autor */
+.copyright {
+    text-align: center;
+}

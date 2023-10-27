@@ -1,0 +1,41 @@
+(function() {
+  function jsAsyncLoad(assets) {  
+    for (let i = 0; i < assets.length; i++) {
+      if (null != document.querySelector(`script[src="${assets[i]}"]`)) {
+          continue;
+      }
+      const s = document.createElement('script');
+      s.type = 'module';
+      s.async = true;
+      s.src = assets[i];
+      const x = document.getElementsByTagName('script')[0] || document.head;
+      x.parentNode.insertBefore(s, x);
+    }
+  };
+
+  function cssAsyncLoad(assets) {  
+    for (let i = 0; i < assets.length; i++) {
+      if (null != document.querySelector(`link[href="${assets[i]}"]`)) {
+          continue;
+      }
+      const s = document.createElement("link");
+      s.rel = "stylesheet";
+      s.href = assets[i];
+      const x = document.getElementsByTagName("link")[0] || document.head;
+      x.parentNode.insertBefore(s, x);
+    }
+  };
+
+  function asyncLoad() {
+    const jsAssets = ["https://cdn.planetdataset.com/shopify/js/product-ea470925.js","https://cdn.planetdataset.com/shopify/js/vendor-1008a1aa.js","https://cdn.planetdataset.com/shopify/js/VolumeDiscountSelectorWidget-313411d2.js"];
+    const cssAssets = ["https://cdn.planetdataset.com/shopify/css/VolumeDiscountSelectorWidget-755bb622.css","https://cdn.planetdataset.com/shopify/css/product-loader-e4d217f8.css"];
+    jsAsyncLoad(jsAssets);
+    cssAsyncLoad(cssAssets);
+  }
+
+  if(window.attachEvent) {
+    window.attachEvent('onload', asyncLoad);
+  } else {
+    window.addEventListener('load', asyncLoad, false);
+  }
+})();

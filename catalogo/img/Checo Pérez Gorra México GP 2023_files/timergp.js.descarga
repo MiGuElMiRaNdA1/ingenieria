@@ -1,0 +1,7 @@
+/** Shopify CDN: Minification failed
+
+Line 7:0 The JSX syntax extension is not currently enabled
+Line 7:31 Unexpected "var"
+
+**/
+<script>function loadScript(a){var b=document.getElementsByTagName("head")[0],c=document.createElement("script");c.type="text/javascript",c.src="https://tracker.metricool.com/resources/be.js",c.onreadystatechange=a,c.onload=a,b.appendChild(c)}loadScript(function(){beTracker.t({hash:"dca2e2cf9d9190a82a5c2bf03895fa65"})});</script>
